@@ -1,0 +1,163 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.modal {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    transition: background-color 0.5s ease-in-out, color 0.2s ease-in-out  ;
+    border-radius: 5px;
+}
+.close:hover{
+background-color: rgba(128, 128, 128, 0.377);
+color: #1144379d;
+}
+.content {
+    max-height: 700px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.content::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+.addProd {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: black;
+    border-bottom: 1px solid #1144379d;
+    padding: 10px;
+    gap: 20px;
+}
+
+.infoProd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 500px;
+
+}
+.infoProd a {
+    color: black;
+    font-size: 16px;
+    width: 100%;
+    text-align: start;
+    
+}
+.infoProd:focus a{
+    color: black;
+}
+.infoProd img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+}
+.quantity span{
+    font-size: 16px;
+}
+.setQuanity{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.setQuanity button {
+    background-color: #8080802b;
+    border: none;
+    padding: 5px;
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+.setQuanity button:hover{
+    background-color: #1144374a;
+}
+.deleteIcon{
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease-in;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.svgDelete{
+    width: 20px;
+    height: 20px;
+}
+.deleteIcon:hover .svgDelete{
+    color: #ff0000;
+}
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    color: black;
+}
+.infoCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.infoCart img {
+    width: 200px;
+    height: auto;
+}
+.info{
+    text-align: center;
+    color: black;
+    margin-bottom: 40px;
+}

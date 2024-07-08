@@ -1,0 +1,133 @@
+/* .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.brandSection {
+  /* background-color: #adadad75; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.brandSectionWithBanner {
+  flex-direction: row;
+}
+
+.bannerImage {
+  max-width: 700px;
+  min-width: 700px;
+  max-height: 400px;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.producsList {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: auto;
+}
+
+.productItem {
+  display: flex;
+  max-width: 220px;
+  min-width: 220px;
+  min-height: 350px;
+  max-height: 500px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  justify-content: center;
+  gap: 5px;
+}
+
+.productItem img {
+  width: 100%;
+  height: auto;
+}
+
+.productItem h3 {
+  font-size: 16px;
+} */ 
+
+.container {
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+}
+.brandSection{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  min-width: 90%;
+  width: 1200px;
+  max-height: 500px;
+}
+.bannerImage{
+  max-height: 500px;
+  min-width: 900px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+.producsList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: auto;
+  min-width: 100%;
+  /* background-color: #2a5b69; */
+  margin-left: 30px;
+}
+.link{
+  color: #000000;
+  transition: color 0.2s ease-in;
+}
+.link:hover,
+.link:focus,
+.link:active{
+  color: #148568f0;
+}
+.productItem{
+  display: flex;
+  max-width: 220px;
+  min-width: 220px;
+  min-height: 350px;
+  max-height: 500px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  justify-content: center;
+  gap: 5px;
+}
+.productItem h3 {
+  font-size: 16px;
+} 

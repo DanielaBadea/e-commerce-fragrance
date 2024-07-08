@@ -1,0 +1,112 @@
+.wrapper{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    background-color: #000000;
+    flex-direction: column;
+    color: #ffffff;
+}
+.descripStore{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    gap: 20px;
+}
+.descripStore > img{
+    width: 117px;
+    min-width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
+.gridWrapper{
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+.description {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Playfair', sans-serif;
+}
+.location{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+.list > li{
+    margin-bottom: 10px;
+    
+}
+.list li a {
+    color: #ffffff;
+    transition: color 0.2s ease-in;
+}
+.list li a:hover,
+.list li a:active,
+.list li a:focus{
+    color: #199d7df0;
+}
+/* .contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+} */
+.containerContact{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 170px;
+}
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+.styleSocial{
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+}
+.styleSocial:hover{
+   color: #199d7df0;
+}
+.descriptionTerms{
+    width: 80vw;
+    margin: 0 auto;
+}
+.descriptionTerms > p{
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+.copyright{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-around;
+}
