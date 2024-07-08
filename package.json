@@ -1,8 +1,9 @@
 {
-  "name": "store",
+  "name": "e-commerce-fragrance",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://danielabadea.github.io/e-commerce-fragrance/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
