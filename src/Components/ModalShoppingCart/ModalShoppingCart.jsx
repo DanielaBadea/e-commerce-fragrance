@@ -3,28 +3,30 @@ import css from './ModalShoppingCart.module.css';
 import { IoMdClose } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdDelete } from "react-icons/md";
-import { addToCart, decrementQuantity, deleteToCart } from '../../Redux/cartSlice';
-import { selectCartItemsMemoized, selectCartTotalAmountMemoized } from '../../Redux/selectors';
 import shoppingCart from '../../assets/shopping-cart-add.svg';
 import { Link } from 'react-router-dom';
+import { selectCartItems, selectCartTotalAmount } from '../../Redux/cart/selectors';
+import { fetchAddToCart, fetchDecrementQuantity, fetchDeleteItem } from '../../Redux/cart/operations';
 
 const ModalShoppingCart = ({ close }) => {
-    const products = useSelector(selectCartItemsMemoized);
-    const totalAmount = useSelector(selectCartTotalAmountMemoized);
+    const products = useSelector(selectCartItems);
+    console.log("Prod from card", products);
+    const totalAmount = useSelector(selectCartTotalAmount);
     const hasProducts = products && products.length > 0;
     const dispatch = useDispatch();
 
     const handleDeleteProduct = (productId) => {
-        dispatch(deleteToCart(productId));
+        dispatch(fetchDeleteItem(productId));
     }  
 
     const handleDecrement = (productId) => {
-        dispatch(decrementQuantity(productId))
+        dispatch(fetchDecrementQuantity(productId))
     };
 
-    const handleIncrement = (product) => {
-        dispatch(addToCart(product))
-    }
+   const handleIncrement = (product) => {
+    console.log("Adding to cart:", product);
+    dispatch(fetchAddToCart(product));
+};
 
     return (
         <div className={css.overlay} onClick={close}>
@@ -36,25 +38,25 @@ const ModalShoppingCart = ({ close }) => {
                     <>
                     <div className={css.content}>
                         {products.map((product) => (
-                            <div key={product.id} className={css.addProd}>
+                            <div key={product._id} className={css.addProd}>
                                 <div className={css.infoProd}>
-                                    <Link to ={`/products/${product.id}`} onClick={close}>
+                                    <Link to ={`/products/${product.productId}`} onClick={close}>
                                     <img src={product.image} alt={product.title} />
                                     </Link>
-                                    <Link to ={`/products/${product.id}`} onClick={close}>
+                                    <Link to ={`/products/${product.productId}`} onClick={close}>
                                     <p>{product.brand}</p>
                                     <p>{product.title}</p>
                                     </Link>
                                 </div>
                                 <div className={css.quantity}>
                                     <div className={css.setQuanity}>
-                                        <button type='button' onClick={() => handleDecrement(product.id)}>-</button>
-                                        <span>{product.cartQuantity}</span>
-                                        <button type='button' onClick={() => handleIncrement(product)}>+</button>
+                                        <button type='button' onClick={() => handleDecrement(product.productId)}>-</button>
+                                        <span>{product.quantity}</span>
+                                        <button type='button' onClick={() => handleIncrement(product.productId)}>+</button>
                                     </div>
                                     <span>Price: {product.price.toFixed(2)} RON</span>
                                 </div>
-                                <button type='button' className={css.deleteIcon} onClick={() => handleDeleteProduct(product.id)}>
+                                <button type='button' className={css.deleteIcon} onClick={() => handleDeleteProduct(product.productId)}>
                                     <MdDelete className={css.svgDelete} />
                                 </button>
                             </div>

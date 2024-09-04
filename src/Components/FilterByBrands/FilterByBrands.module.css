@@ -1,0 +1,48 @@
+.brandLinksContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.lineVertical{
+    width:20px;
+    height: 10px;
+    background-color: #199d7df0;;
+    outline: none;
+    border: 0.5px solid #199d7df0;;
+    margin: 0 8px;
+    padding: 0;
+
+}
+.brandLinksContainer p {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.linksBrand{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linksBrand .link{
+    color: black;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease-in;
+    /* scale: 1; */
+}
+
+.linksBrand .link:hover {
+    color: #199d7df0;
+    /* scale: 1.1; */
+}
+
+.linksBrand .link:focus {
+    color: #199d7df0;
+}

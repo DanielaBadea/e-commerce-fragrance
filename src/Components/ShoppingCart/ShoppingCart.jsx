@@ -4,10 +4,11 @@ import { FaShoppingCart } from "react-icons/fa";
 import useModal from "../../hooks/useModal";
 import ModalShoppingCart from "../ModalShoppingCart/ModalShoppingCart";
 import { useSelector } from "react-redux";
+import { selectCartTotalQuantity} from "../../Redux/cart/selectors";
 
 const ShoppingCart =() => {
     const { isOpen, openModal, closeModal }=useModal();
-    const totalQuanity = useSelector((state) => state.cart.cartTotalQuantity)
+    const totalQuanity = useSelector(selectCartTotalQuantity)
     return(
         <>
         <FaShoppingCart onClick={openModal}/><span className={css.counter}>{totalQuanity}</span>

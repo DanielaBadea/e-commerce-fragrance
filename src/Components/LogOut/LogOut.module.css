@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.user {
+  color: #199d7df0;
+}
+.btnExit {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in;
+}
+.btnExit:hover {
+  /* background-color: #00bcd4a3; */
+  border: 1px solid rgb(219, 214, 214);
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}

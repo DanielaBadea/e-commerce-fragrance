@@ -1,8 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { dropdownReducer } from "./dropDownSlice";
 import { productsReducer } from "./ProductsSlice";
-import { filtersReducer } from "./filterSlice";
-import { cartReducer } from "./cartSlice";
 import {
     persistStore,
     persistReducer,
@@ -14,20 +12,30 @@ import {
     REGISTER,
   } from 'redux-persist';
   import storage from 'redux-persist/lib/storage';
+import { reducerCustomerService } from "./CustomerService";
+import { authReducer } from "./auth/authSlice";
+import { cartReducer } from "./cart/cartSlice";
+// import { filterPriceReducer } from "./filterPriceSlice";
+// import { categoryReducer } from "./categorySlice";
+// import { brandReducer } from "./brandSlice";
 
-  const persistConfig = {
-    key:"items",
-    storage
-  };
-
-  const persistedProductsCartReducer = persistReducer(persistConfig, cartReducer);
+ const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
+  const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
-    reducer: {
+  reducer: {
+      auth: persistedAuthReducer,
         dropdown: dropdownReducer,
         products: productsReducer,
-        cart: persistedProductsCartReducer,
-        filterPrice: filtersReducer,
+        // category: categoryReducer,
+        // brand: brandReducer,
+        cart: cartReducer,
+        // priceFilter: filterPriceReducer,
+        customerService: reducerCustomerService,
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

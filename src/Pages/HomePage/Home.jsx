@@ -20,6 +20,9 @@ import rituals from '../../assets/rituals_benner.jpg';
 import tom_ford from '../../assets/TomFord_benner.webp';
 import ysl from '../../assets/YSL_benner.avif';
 import { Link } from 'react-router-dom';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import imgNotFound from '../../assets/image_not_found.png';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -28,7 +31,7 @@ const Home = () => {
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts({limit:'all'}));
   }, [dispatch]);
 
   if (isLoading) {
@@ -43,7 +46,7 @@ const Home = () => {
     return <div>No products found.</div>;
   }
 
-  const groupedByBrand = productsState.reduce((group, product) => {
+  const groupedByBrand = productsState.products.reduce((group, product) => {
     const { brand } = product;
     if (!group[brand]) {
         group[brand] = [];
@@ -72,6 +75,24 @@ const Home = () => {
 
   console.log(groupedByBrand);
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1024 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 768, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <>
       <Hero />
@@ -79,18 +100,23 @@ const Home = () => {
         {Object.entries(groupedByBrand).map(([brand, products]) => (
           <div key={brand} className={`${css.brandSection} ${css.brandSectionWithBanner}`}>
             {brandBanners[brand] && <img src={brandBanners[brand]} alt={`${brand} banner`} className={css.bannerImage} />}
-            <div className={css.producsList}>
+            {/* <div className={css.producsList}> */}
+            <Carousel responsive={responsive} infinite autoPlay autoPlaySpeed={3000} className={css.producsList} > 
             {products.map(product => (
-                <div key={product.id} className={css.productItem}>
-                  <Link to={`/products/${product.id}`} className={css.link}>
-                  <img src={product.image} alt={product.title} />
+              // <CarouselItem key={product.id} className={css.productItem}>
+                 <div key={product._id} className={css.productItem}> 
+                  <Link to={`/products/${product._id}`} className={css.link}>
+                  
+                  <img src={product.image} alt={product.title} onError={e => e.target.src = imgNotFound} />
                   <h3>{product.title}</h3>
                   <p>{product.types}</p>
                   <p><strong>Price:</strong> {product.price.toFixed(2)} RON</p>
                   </Link>
-                </div>
+                 </div> 
+                // </CarouselItem>
               ))}
-            </div>
+            {/* </div> */}
+            </Carousel>
             </div>
         ))}
       </div>

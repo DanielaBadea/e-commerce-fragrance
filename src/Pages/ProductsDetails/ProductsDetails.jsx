@@ -4,14 +4,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {fetchProductsDetails } from '../../Redux/operations';
 import { selectorProductsDetails, selectIsLoading, selectError } from '../../Redux/selectors';
-import { addToCart } from '../../Redux/cartSlice';
+// import { addToCart } from '../../Redux/cart/cartSlice';
+import { fetchAddToCart } from '../../Redux/cart/operations';
 
+ 
 const ProductsDetails = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
     const productDetails = useSelector(selectorProductsDetails);
     const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
+
 
     useEffect(() => {
         dispatch(fetchProductsDetails(productId));
@@ -33,8 +36,8 @@ const ProductsDetails = () => {
     const isOtherCategory = productDetails.name === 'Women' || productDetails.name === 'Men';
 
     const handleAddCard = () => {
-        if (productDetails && productDetails.id) {
-            dispatch(addToCart(productDetails));
+        if (productDetails && productDetails._id) {
+            dispatch(fetchAddToCart(productDetails._id));
         } else {
             console.error("Invalid product data");
         }
@@ -75,7 +78,7 @@ const ProductsDetails = () => {
                 <h2>Descriere</h2>
                 <p className={css.longDescr}>{productDetails.long_description}</p>
             </div>
-        </div>
+        </div> 
     );
 };
 

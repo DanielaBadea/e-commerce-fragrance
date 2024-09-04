@@ -19,7 +19,7 @@
 .dropdown {
     display: none;
     position: absolute;
-    top: 140%;
+    top: 110%;
     left: -150%;
     width: 40vw; 
     min-height: 200px; 

@@ -2,8 +2,8 @@
 import React from 'react';
 import css from './LoadMore.module.css';
 
-const LoadMoreButton = ({ onClick, isVisible }) => {
-    if (!isVisible) return null;
+const LoadMoreButton = ({ onClick}) => {
+    // if (!isVisible) return null;
 
     return (
         <div className={css.containerLoad}>

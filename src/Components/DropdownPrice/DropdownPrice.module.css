@@ -1,0 +1,8 @@
+.space{
+    width: 100%;
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+}

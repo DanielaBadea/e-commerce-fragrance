@@ -1,0 +1,82 @@
+/* .wrapper{ 
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+} */
+/* .containerLeft {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    width: 100vw;
+    max-width: 300px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 15px;
+    border-right: 1px solid #0000002b;
+} */
+
+.wrapper p{
+    font-size: 18px;
+    color: gray;
+    margin-left: 20px;
+}
+.containerRight {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    /* margin: 40px auto; */
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 1px 1px 10px #0000004a;
+    scale: 1;
+    gap: 5px;
+    max-height: 500px;
+}
+
+.cart h3, h4{
+    font-size: 16px;
+    text-align: center;
+}
+.cart:hover{
+    transform: scale(1.05);
+}
+.addCard{
+    margin-top: 10px;
+}
+.cart > img {
+    width: 280px;
+    height: 280px;
+}
+.button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #409f885e;
+    color: #817979;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, color 0.2s ease-in-out  ;
+}
+.button:hover{
+    background-color: #1144379d;
+    color: #ffff;
+}
+.link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}

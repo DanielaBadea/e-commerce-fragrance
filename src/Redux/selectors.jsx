@@ -1,20 +1,21 @@
-import { createSelector } from "@reduxjs/toolkit";
-
 export const selectorDropdown = (state) => state.dropdown.isDropdownOpen;
 export const selectorProducts = (state) => state.products.products;
 export const selectIsLoading = state => state.products.isLoading;
 export const selectError = state => state.products.error;
+export const selectorTotalProd = (state) => state.products.totalProducts;
 export const selectorProductsDetails = (state) => state.products.productDetails;
-export const selectorFilterPrice = (state)=> state.filter.filteredItem;
-const selectorCartItems = state => state.cart.cartItems;
-const selectorCartTotalAmount = state => state.cart.cartTotalAmount;
-
-export const selectCartItemsMemoized = createSelector(
-    [selectorCartItems],
-    cartItems => cartItems
-  );
-  
-  export const selectCartTotalAmountMemoized = createSelector(
-    [selectorCartTotalAmount],
-    cartTotalAmount => cartTotalAmount
-  );
+export const selectorcustomersService = (state) => state.customerService.customers;
+export const selectorcustomersIsLoading = (state) => state.customerService.isLoading;
+export const selectorcustomersError = (state) => state.customerService.error;
+export const selectorFormName = (state) => state.customerService.form.name;
+export const selectorFormEmail = (state) => state.customerService.form.email;
+export const selectorFormMessage = (state) => state.customerService.form.message;
+// export const selectorPrice = (state) => state.priceFilter.price;
+// export const selectorPriceError = (state) => state.priceFilter.error;
+// export const selectorPriceIsLoading = (state) => state.priceFilter.isLoading;
+// export const selectorCategory = (state) => state.category.category;
+// export const selectorCategoryIsLoading = (state) => state.category.isLoading;
+// export const selectorCategoryError = (state) => state.category.error;
+// export const selectorBrand = (state) => state.brand.productsByBrand;
+// export const selectorBrandIsLoading = (state) => state.brand.isLoading;
+// export const selectorBrandError = (state) => state.brand.error;

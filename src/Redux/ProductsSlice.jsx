@@ -14,6 +14,7 @@ const productsSlice = createSlice({
     name: 'products',
     initialState: {
         products: [],
+        totalProducts: 0,
         isLoading: false,
         error: null,
         productDetails: null,
@@ -25,6 +26,7 @@ const productsSlice = createSlice({
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.products = action.payload;
+                state.totalProducts = action.payload.total;
             })
             .addCase(fetchProducts.rejected, handleRejected)
             .addCase(fetchProductsDetails.pending, handlePending)

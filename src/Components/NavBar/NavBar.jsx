@@ -8,6 +8,8 @@ import { IoPersonAdd } from "react-icons/io5";
 // import candles from "../../assets/candles.jpg"
 import Dropdown from "../Dropdown/Dropdown";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import { useAuth } from "../../hooks/useAuth";
+import LogOut from "../LogOut/LogOut";
 
 const NavBar = () => {
     // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,13 +21,15 @@ const NavBar = () => {
     // const handleDropdownClose = () => {
     //     setIsDropdownOpen(false);
     // };
+    const { isLoggedIn } = useAuth();
+
     return (
         <div className={css.wrapperNav}>
             <div className={css.navigation}>
                 <Link to='/'><img src={logo} alt="Logo"/></Link>
                 <ul className={css.linksCenter}>
                     <li>
-                        <NavLink to="/" className={css.linkNav}>Home</NavLink>
+                        <NavLink to="/" className={css.linkNav}>Acasă</NavLink>
                     </li>
                     <li> <Dropdown/>
                     {/* <li className={css.products} onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownClose}>
@@ -48,15 +52,21 @@ const NavBar = () => {
                         </div> */}
                     </li>
                     <li>
-                        <NavLink to="/about" className={css.linkNav}>About</NavLink>
+                        <NavLink to="/about" className={css.linkNav}>Despre noi</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contacts" className={css.linkNav}>Contacts</NavLink>
+                        <NavLink to="/contacts" className={css.linkNav}>Contact</NavLink>
                     </li>
                 </ul>
                 <div className={css.linksEnd}>
-                    <NavLink to="/login" className={css.linkNav}><IoPersonAdd/></NavLink>
-                    <span to="/cart" className={`${css.linkNav} ${css.iconCart}`}><ShoppingCart/></span>
+                    {isLoggedIn ? (
+                        <>
+                            <LogOut/>
+                            <span className={`${css.linkNav} ${css.iconCart}`}><ShoppingCart/></span>
+                        </>
+                    ) : (
+                        <NavLink to="/register" className={css.linkNav}><IoPersonAdd/></NavLink>
+                    )}
                 </div>
             </div>
         </div>

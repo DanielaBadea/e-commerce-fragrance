@@ -1,0 +1,105 @@
+.benner {
+    width: 100vw;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bennerWomen {
+    background-image: url('../../../assets/benner_women.avif');
+}
+.bennerMen{
+    background-image: url('../../../assets/benner_men.jpeg');
+}
+.bennerHome{
+    background-image: url('../../../assets/benner_home.avif');
+}
+.bennerDefault{
+    background-image: url('../../../assets/bennerDefault.jpeg');
+}
+.bennerCloe{
+    background-image: url('../../../assets/Chloe_benner.png');
+}
+.bennerYSL{
+    background-image: url('../../../assets/YSL_benner.avif');
+}
+.bennerBurberry{
+    background-image: url('../../../assets/BURBERRY_benner.avif');
+}
+.bennerNR{
+    background-image: url('../../../assets/narcisorodriguez_benner.jpg');
+}
+.bennerKayali{
+    background-image: url('../../../assets/kayali_benner.webp');
+}
+.bennerDior{
+    background-image: url('../../../assets/dior_banner.jpg');
+}
+.bennerTF{
+    background-image: url('../../../assets/TomFord_benner.webp');
+}
+.bennerArmani{
+    background-image: url('../../../assets/Armani_benner.webp');
+}
+.bennerJPG{
+    background-image: url('../../../assets/jean_paul_gauliter_benner.jpg');
+}
+.bennerAzzaro{
+    background-image: url('../../../assets/azzaro_benner.jpg');
+}
+.bennerPrada{
+    background-image: url('../../../assets/Prada_benner.jpg');
+}
+.bennerBoss{
+    background-image: url('../../../assets/boss_benner.webp');
+}
+.bennerGivenchy{
+    background-image: url('../../../assets/GIV_banner.avif');
+}
+.bennerCH{
+    background-image: url('../../../assets/Carolina_HR_banner.webp');
+}
+.bennerRituals{
+    background-image: url('../../../assets/rituals_benner.jpg');
+}
+                            
+.benner > span {
+    background-color: #e3e3e35e;
+    color: rgb(5, 5, 5);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Kalam', sans-serif;
+}
+.container{ 
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+    padding: 10px;
+}
+
+.containerLeft{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    width: 100vw;
+    max-width: 300px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 15px;
+    border-right: 1px solid #0000002b;
+}
+.filtersContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+}
+.categoryContainer{
+    margin: 40px auto;
+}
